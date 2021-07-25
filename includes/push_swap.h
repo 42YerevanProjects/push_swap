@@ -1,9 +1,6 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include "../libft/libft.h"
 
 // Stack
@@ -28,17 +25,17 @@ void	ft_error(char *msg);
 
 // Instruction functions
 
-void	sa(t_list **stack_a);
-void	sb(t_list **stack_b);
-void	ss(t_list **stack_a, t_list **stack_b);
-void	pa(t_list **stack_a, t_list **stack_b);
-void	pb(t_list **stack_b, t_list **stack_a);
-void	ra(t_list **stack_a);
-void	rb(t_list **stack_b);
-void	rr(t_list **stack_a, t_list **stack_b);
-void	rra(t_list **stack_a);
-void	rrb(t_list **stack_b);
-void	rrr(t_list **stack_a, t_list **stack_b);
+int	sa(t_list **stack_a);
+int	sb(t_list **stack_b);
+int	ss(t_list **stack_a, t_list **stack_b);
+int	pa(t_list **stack_a, t_list **stack_b);
+int	pb(t_list **stack_b, t_list **stack_a);
+int	ra(t_list **stack_a);
+int	rb(t_list **stack_b);
+int	rr(t_list **stack_a, t_list **stack_b);
+int	rra(t_list **stack_a);
+int	rrb(t_list **stack_b);
+int	rrr(t_list **stack_a, t_list **stack_b);
 
 #endif
 
