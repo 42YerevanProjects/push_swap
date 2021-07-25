@@ -117,10 +117,10 @@ void	rr(t_list **stack_a, t_list **stack_b)
 static void	reverseRotate(t_list **stack)
 {
 	t_list	*head;
-	t_list	*last;
+	t_list	*tail;
 
 	head = *stack;
-	last = ft_lstlast(head);
+	tail = ft_lstlast(head);
 	while (head)
 	{
 		if (head->next->next == NULL)
@@ -130,8 +130,8 @@ static void	reverseRotate(t_list **stack)
 		}
 		head = head->next;
 	}
-	last->next = *stack;
-	*stack = last;
+	tail->next = *stack;
+	*stack = tail;
 }
 
 void	rra(t_list **stack_a)
