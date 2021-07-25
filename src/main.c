@@ -59,9 +59,17 @@ int main(int argc, char **argv)
 	initStack(stack_b, argv);
 
 	printStacks(stack_a, stack_b);
-	push(stack_b, stack_a);
-	push(stack_b, stack_a);
-	push(stack_b, stack_a);
+	ft_putendl_fd("-------------------\n", 1);
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	ra(stack_a);
+	ra(stack_a);
+	sa(stack_a);
+	sb(stack_b);
+	rrr(stack_a, stack_b);
+	rrb(stack_b);
+	ss(stack_a, stack_b);
 
 	ft_putendl_fd("-------------------\n", 1);
 	printStacks(stack_a, stack_b);
