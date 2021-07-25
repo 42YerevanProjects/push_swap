@@ -84,7 +84,7 @@ void printList(t_list *head)
 	tmp = head;
     while(tmp != NULL)
 	{
-        printf("%d\n", tmp->value);
+        ft_putnbr_fd(tmp->value, 1);
         tmp = tmp->next;
     }
 }
