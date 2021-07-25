@@ -83,21 +83,13 @@ void	pb(t_list **stack_a, t_list **stack_b)
 static void	rotate(t_list **stack)
 {
 	t_list	*head;
-	int		tmp;
+	t_list	*tail;
 
 	head = *stack;
-	tmp = head->value;
-
-	while (head)
-	{
-		if (head->next == NULL)
-		{
-			head->value = tmp;
-			return ;
-		}
-		head->value = head->next->value;
-		head = head->next;
-	}
+	tail = ft_lstlast(head);
+	*stack = head->next;
+	head->next = NULL;
+	tail->next = head;
 }
 
 void	ra(t_list **stack_a)
@@ -125,28 +117,21 @@ void	rr(t_list **stack_a, t_list **stack_b)
 static void	reverseRotate(t_list **stack)
 {
 	t_list	*head;
-	int		*values;
-	int		i;
+	t_list	*last;
 
 	head = *stack;
-	values = (int *)malloc(ft_lstsize(head) * sizeof(int));
-	values[0] = ft_lstlast(head)->value;
-	i = 1;
-	while (head && head->next)
-	{
-		values[i] = head->value;
-		head = head->next;
-		i++;
-	}
-	head = *stack;
-	i = 0;
+	last = ft_lstlast(head);
 	while (head)
 	{
-		head->value = values[i];
+		if (head->next->next == NULL)
+		{
+			 head->next = NULL;
+			 break ;
+		}
 		head = head->next;
-		i++;
 	}
-	free(values);
+	last->next = *stack;
+	*stack = last;
 }
 
 void	rra(t_list **stack_a)
@@ -167,3 +152,4 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	reverseRotate(stack_b);
 	ft_putendl_fd("rrr", 1);
 }
+
