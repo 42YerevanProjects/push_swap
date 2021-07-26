@@ -6,55 +6,16 @@ void	ft_error(char *msg)
 	exit(0);
 }
 
-// Check for the argv
-
-static int ft_contains(int num, char **argv, int i)
+int	is_sorted(t_list **stack)
 {
-	// check will be done after the i-th element
-	i++; 
-	while (argv[i])
-	{
-		if (ft_atoi(argv[i]) == num)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+	t_list *head;
 
-static int	ft_isnum(char *num)
-{
-	int	i;
-
-	i = 0;
-	if (num[0] == '-')
-		i++;
-	while (num[i])
+	head = *stack;
+	while (head && head->next)
 	{
-		if (!ft_isdigit(num[i]))
+		if (head->value > head->next->value)
 			return (0);
-		i++;
+		head = head->next;
 	}
 	return (1);
-}
-
-void	ft_check_args(char **argv)
-{
-	int	i;
-	int	tmp;
-
-	i = 1;
-	while (argv[i])
-	{
-		tmp = ft_atoi(argv[i]);
-		if (!ft_isnum(argv[i]))
-			ft_error("Error");
-
-		if (ft_contains(tmp, argv, i))
-			ft_error("Error");
-		
-		// TODO: handle MAX_INT and MIN_INT
-		//if (tmp < -2147483648 || tmp > 2147483647)
-		//	ft_error("Error");
-		i++;
-	}
 }
