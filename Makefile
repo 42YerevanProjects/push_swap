@@ -1,6 +1,7 @@
 NAME = push_swap
 
-SRCS = src/main.c utils/t_list.c src/instructions.c utils/utils.c
+SRCS = src/main.c src/instructions.c utils/t_list.c utils/utils.c \
+	   utils/check_args.c
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
