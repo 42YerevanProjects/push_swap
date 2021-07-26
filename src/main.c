@@ -55,26 +55,28 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	ft_check_args(argv);
+
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 
 	initStack(stack_a, argv);
-//	initStack(stack_b, argv);
 
+	if (is_sorted(stack_a))
+	{
+		free(stack_a);
+		free(stack_b);
+		return (0);
+	}
+
+	////////////////////////////////////////////////////
+	
 	printStacks(stack_a, stack_b);
 	ft_putendl_fd("-------------------\n", 1);
-//	pb(stack_a, stack_b);
-//	pb(stack_a, stack_b);
-//	pa(stack_a, stack_b);
-//	ra(stack_a);
-//	ra(stack_a);
-//	sa(stack_a);
-//	sb(stack_b);
-//	rrr(stack_a, stack_b);
-//	rrb(stack_b);
-//	rra(stack_a);
-
 	ft_putendl_fd("", 1);
+
+
+	/* THE INSTRUCTIONS THAT ARE GOING TO BE PRINTED*/
+
 	ft_putendl_fd("-------------------\n", 1);
 	printStacks(stack_a, stack_b);
 
