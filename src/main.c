@@ -52,6 +52,9 @@ int main(int argc, char **argv)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
+	if (argc < 2)
+		return (-1);
+	ft_check_args(argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 
@@ -60,20 +63,22 @@ int main(int argc, char **argv)
 
 	printStacks(stack_a, stack_b);
 	ft_putendl_fd("-------------------\n", 1);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	pa(stack_a, stack_b);
-	ra(stack_a);
-	ra(stack_a);
-	sa(stack_a);
-	sb(stack_b);
-	rrr(stack_a, stack_b);
-	rrb(stack_b);
-	rra(stack_a);
+//	pb(stack_a, stack_b);
+//	pb(stack_a, stack_b);
+//	pa(stack_a, stack_b);
+//	ra(stack_a);
+//	ra(stack_a);
+//	sa(stack_a);
+//	sb(stack_b);
+//	rrr(stack_a, stack_b);
+//	rrb(stack_b);
+//	rra(stack_a);
 
 	ft_putendl_fd("", 1);
 	ft_putendl_fd("-------------------\n", 1);
 	printStacks(stack_a, stack_b);
 
-	return (argc);
+	free(stack_a);
+	free(stack_b);
+	return (0);
 }
