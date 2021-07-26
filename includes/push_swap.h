@@ -22,6 +22,7 @@ void	printList(t_list *head);
 int		ft_lstsize(t_list *head);
 
 void	ft_error(char *msg);
+void	ft_check_args(char **argv);
 
 // Instruction functions
 
