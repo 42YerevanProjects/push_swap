@@ -8,6 +8,7 @@
 typedef struct	s_list
 {
         int value;
+		int	index;
         struct s_list *next;
 }				t_list;
 
@@ -24,6 +25,11 @@ int		ft_lstsize(t_list *head);
 void	ft_error(char *msg);
 void	ft_check_args(char **argv);
 int		is_sorted(t_list **stack);
+
+// Algorithm utils
+
+void	index_stack(t_list **stack);
+void	radix_sort(t_list **stack_a, t_list **stack_b);
 
 // Instruction functions
 
