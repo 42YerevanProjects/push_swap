@@ -11,6 +11,7 @@ t_list	*ft_lstnew(int value)
         if (!new)
                 return (NULL);
         new->value = value;
+		new->index = -1;
         new->next = NULL;
         return (new);
 }
