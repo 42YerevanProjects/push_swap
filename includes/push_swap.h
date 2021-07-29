@@ -25,6 +25,8 @@ int		ft_lstsize(t_list *head);
 void	ft_error(char *msg);
 void	ft_check_args(char **argv);
 int		is_sorted(t_list **stack);
+int		get_distance(t_list **stack, int index);
+void	make_top(t_list **stack, int distance);
 
 // Algorithm utils
 
