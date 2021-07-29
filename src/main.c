@@ -13,38 +13,7 @@ static void	initStack(t_list **stack, char **argv)
 		i++;
 	}
 }
-/*
-static void printStacks(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*head_a;
-	t_list	*head_b;
 
-	head_a = *stack_a;
-	head_b = *stack_b;
-	while (head_a || head_b)
-	{
-		 if (head_a != NULL)
-		{
-			ft_putnbr_fd(head_a->value, 1);
-			ft_putstr_fd("    ", 1);
-			head_a = head_a->next;
-		}
-		else
-			ft_putstr_fd("     ", 1);
-		if (head_b != NULL)
-		{
-			ft_putnbr_fd(head_b->value, 1);
-			ft_putendl_fd("", 1);
-			head_b = head_b->next;
-		}
-		else
-			ft_putendl_fd(" ", 1);
-	}
-
-	ft_putendl_fd("-    -", 1);
-	ft_putendl_fd("a    b", 1);
-}
-*/
 // The main function
 
 int main(int argc, char **argv)
@@ -54,7 +23,7 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	//ft_check_args(argv);
+	ft_check_args(argv);
 
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
@@ -70,18 +39,13 @@ int main(int argc, char **argv)
 
 	index_stack(stack_a);
 
-	//printStacks(stack_a, stack_b);
-	//ft_putendl_fd("-------------------\n\n", 1);
-	
-	radix_sort(stack_a, stack_b);
+	if (argc < 6)
+		simple_sort(stack_a, stack_b);
 
-	/* THE INSTRUCTIONS THAT ARE GOING TO BE PRINTED*/
-
-	//ft_putendl_fd("-------------------\n", 1);
-	//printStacks(stack_a, stack_b);
-
-	//if (is_sorted(stack_a))
-	//	ft_putendl_fd("sorted yay", 1);
+	if (is_sorted(stack_a))
+		ft_putendl_fd("sorted yay", 1);
+	else 
+		ft_putendl_fd("fail", 1);
 
 	free(stack_a);
 	free(stack_b);
