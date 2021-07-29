@@ -19,3 +19,37 @@ int	is_sorted(t_list **stack)
 	}
 	return (1);
 }
+
+int	get_distance(t_list **stack, int index)
+{
+	t_list	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
+}
+
+void	make_top(t_list **stack, int distance)
+{
+	t_list	*head;
+	int		tmp;
+
+	head = *stack;
+	tmp = ft_lstsize(head) - distance;
+	if (distance < ft_lstsize(head))
+	{
+		while (distance-- > 0)
+			ra(stack);
+	}
+	else
+		while (tmp-- > 0)
+			rra(stack);
+}
