@@ -1,5 +1,29 @@
 #include "../includes/push_swap.h"
 
+static void decrement_index(t_list **stack)
+{
+	t_list *head;
+
+	head = *stack;
+	while (head)
+	{
+		head->index--;
+		head = head->next;
+	}
+}
+
+static void increment_index(t_list ** stack)
+{
+	t_list *head;
+
+	head = *stack;
+	while (head)
+	{
+		head->index++;
+		head = head->next;
+	}
+}
+
 static void	sort_3(t_list **stack_a)
 {
 	t_list	*head;
@@ -29,18 +53,9 @@ static void	sort_3(t_list **stack_a)
 
 static void	sort_4(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*head_a;
-	int		distance;
+	int	distance;
 
-	head_a = *stack_a;
-	distance = 0;
-	while (head_a)
-	{
-		if (head_a->index == 3)
-			break ;
-		distance++;
-		head_a = head_a->next;
-	}
+	distance = get_distance(stack_a, 0);
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
@@ -48,12 +63,37 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else 
+	else if (distance == 3) 
 		rra(stack_a);
 	pb(stack_a, stack_b);
+	decrement_index(stack_a);
 	sort_3(stack_a);
 	pa(stack_a, stack_b);
-	ra(stack_a);
+}
+
+static void	sort_5(t_list **stack_a, t_list **stack_b)
+{
+	int	distance;
+
+	distance = get_distance(stack_a, 0);
+	if (distance == 1)
+		ra(stack_a);
+	else if (distance == 2)
+	{
+		ra(stack_a);
+		ra(stack_a);
+	}
+	else if (distance == 3)
+	{
+		rra(stack_a);
+		rra(stack_a);
+	}
+	else if (distance == 4)
+		rra(stack_a);
+	pb(stack_a, stack_b);
+	decrement_index(stack_a);
+	sort_4(stack_a, stack_b);
+	pa(stack_a, stack_b);
 }
 
 void	simple_sort(t_list **stack_a, t_list **stack_b)
@@ -67,4 +107,6 @@ void	simple_sort(t_list **stack_a, t_list **stack_b)
 		sort_3(stack_a);
 	else if (size == 4)
 		sort_4(stack_a, stack_b);
+	else if (size == 5)
+		sort_5(stack_a, stack_b);
 }
