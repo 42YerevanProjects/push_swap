@@ -30,6 +30,7 @@ int		is_sorted(t_list **stack);
 
 void	index_stack(t_list **stack);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
+void	simple_sort(t_list **stack_a, t_list **stack_b);
 
 // Instruction functions
 
