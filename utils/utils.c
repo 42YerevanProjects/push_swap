@@ -42,14 +42,32 @@ void	make_top(t_list **stack, int distance)
 	t_list	*head;
 	int		tmp;
 
+	if (distance == 0)
+		return ;
 	head = *stack;
 	tmp = ft_lstsize(head) - distance;
-	if (distance < ft_lstsize(head))
+	if (distance <= (ft_lstsize(head) / 2))
 	{
 		while (distance-- > 0)
 			ra(stack);
 	}
 	else
+	{
 		while (tmp-- > 0)
 			rra(stack);
+	}
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*head;
+	t_list	*tmp;
+
+	head = *stack;
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }
