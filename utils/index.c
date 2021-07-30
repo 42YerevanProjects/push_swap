@@ -30,7 +30,10 @@ void	index_stack(t_list **stack)
 	int		index;
 
 	index = 0;
-	while((head = get_next_min(stack)))
+	head = get_next_min(stack);
+	while (head)
+	{
 		head->index = index++;
+		head = get_next_min(stack);
+	}
 }
-
