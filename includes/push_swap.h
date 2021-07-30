@@ -18,7 +18,6 @@ t_list	*ft_lstnew(int value);
 t_list	*ft_lstlast(t_list *head);
 void	ft_lstadd_front(t_list **stack, t_list *new);
 void	ft_lstadd_back(t_list **stack, t_list *new);
-void	ft_lstdel(t_list *head, int value);
 void	printList(t_list *head);
 int		ft_lstsize(t_list *head);
 
@@ -33,6 +32,7 @@ void	make_top(t_list **stack, int distance);
 void	index_stack(t_list **stack);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
+void	cent_sort(t_list **stack_a, t_list **stack_b);
 
 // Instruction functions
 
