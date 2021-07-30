@@ -86,6 +86,7 @@ void	printList(t_list *head)
 	while (tmp != NULL)
 	{
 		ft_putnbr_fd(tmp->value, 1);
+		ft_putendl_fd("", 1);
 		tmp = tmp->next;
 	}
 }
