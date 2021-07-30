@@ -1,8 +1,7 @@
 #include "../includes/push_swap.h"
 
-static int ft_contains(int num, char **argv, int i)
+static int	ft_contains(int num, char **argv, int i)
 {
-	// check will be done after the i-th element
 	i++;
 	while (argv[i])
 	{
@@ -13,9 +12,9 @@ static int ft_contains(int num, char **argv, int i)
 	return (0);
 }
 
-static int      ft_isnum(char *num)
+static int	ft_isnum(char *num)
 {
-	int     i;
+	int	i;
 
 	i = 0;
 	if (num[0] == '-')
@@ -29,10 +28,10 @@ static int      ft_isnum(char *num)
 	return (1);
 }
 
-void    ft_check_args(char **argv)
+void	ft_check_args(char **argv)
 {
-	int     i;
-	int     tmp;
+	int	i;
+	int	tmp;
 
 	i = 1;
 	 while (argv[i])
@@ -42,7 +41,6 @@ void    ft_check_args(char **argv)
 			ft_error("Error");
 		if (ft_contains(tmp, argv, i))
 			ft_error("Error");
-
 		// TODO: handle MAX_INT and MIN_INT
 		i++;
 	}
