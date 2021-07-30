@@ -1,7 +1,7 @@
 NAME = push_swap
 
-SRCS = src/main.c src/instructions.c src/radix.c src/simple.c utils/t_list.c \
-	   utils/utils.c utils/check_args.c utils/index.c
+SRCS = src/main.c src/instructions.c src/radix.c src/simple.c src/centum.c \
+	   utils/t_list.c utils/utils.c utils/check_args.c utils/index.c
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
