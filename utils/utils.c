@@ -8,7 +8,7 @@ void	ft_error(char *msg)
 
 int	is_sorted(t_list **stack)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *stack;
 	while (head && head->next)
