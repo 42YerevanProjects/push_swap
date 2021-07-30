@@ -1,25 +1,13 @@
 #include "../includes/push_swap.h"
 
-static void decrement_index(t_list **stack)
+static void	decrement_index(t_list **stack)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *stack;
 	while (head)
 	{
 		head->index--;
-		head = head->next;
-	}
-}
-
-static void increment_index(t_list ** stack)
-{
-	t_list *head;
-
-	head = *stack;
-	while (head)
-	{
-		head->index++;
 		head = head->next;
 	}
 }
@@ -63,7 +51,7 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else if (distance == 3) 
+	else if (distance == 3)
 		rra(stack_a);
 	pb(stack_a, stack_b);
 	decrement_index(stack_a);
