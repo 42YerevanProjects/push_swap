@@ -30,7 +30,7 @@ int	sa(t_list **stack_a)
 
 int	sb(t_list **stack_b)
 {
-	if(swap(stack_b) == -1)
+	if (swap(stack_b) == -1)
 		return (-1);
 	ft_putendl_fd("sb", 1);
 	return (0);
@@ -185,4 +185,3 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 	ft_putendl_fd("rrr", 1);
 	return (0);
 }
-
