@@ -26,10 +26,6 @@ int	main(int argc, char **argv)
 	ft_check_args(argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
-	/* 
-		If you malloc anything the best practice is to set that thing to NULL if you do 
-		not use it immedeatly. Hence I initialize the heads of the stacks to NULL.
-	*/
 	*stack_a = NULL;
 	*stack_b = NULL;
 	initStack(stack_a, argv);
@@ -42,6 +38,8 @@ int	main(int argc, char **argv)
 	index_stack(stack_a);
 	if (argc <= 6)
 		simple_sort(stack_a, stack_b);
+	else if (argc == 101)
+		cent_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
 	if (is_sorted(stack_a))
