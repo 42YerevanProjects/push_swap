@@ -12,7 +12,7 @@ static void	decrement_index(t_list **stack)
 	}
 }
 
-static void	sort_3(t_list **stack_a)
+void	sort_3(t_list **stack_a)
 {
 	t_list	*head;
 
