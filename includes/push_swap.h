@@ -38,6 +38,11 @@ void	sort(t_list **stack_a, t_list **stack_b);
 
 // Instruction functions
 
+int		swap(t_list **stack);
+int		push(t_list **stack_to, t_list **stack_from);
+int		rotate(t_list **stack);
+int		reverseRotate(t_list **stack);
+
 int		sa(t_list **stack_a);
 int		sb(t_list **stack_b);
 int		ss(t_list **stack_a, t_list **stack_b);
