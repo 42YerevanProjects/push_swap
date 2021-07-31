@@ -14,6 +14,19 @@ static void	initStack(t_list **stack, char **argv)
 	}
 }
 
+static void	sort_stack(t_list **stack_a, t_list **stack_b, int argc)
+{
+	index_stack(stack_a);
+	if (argc <= 6)
+		simple_sort(stack_a, stack_b);
+	else if (argc < 50)
+		sort(stack_a, stack_b);
+	else if (argc == 101)
+		cent_sort(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
+}
+
 // The main function
 
 int	main(int argc, char **argv)
@@ -31,18 +44,12 @@ int	main(int argc, char **argv)
 	initStack(stack_a, argv);
 	if (is_sorted(stack_a))
 	{
-		free(stack_a);
-		free(stack_b);
-		ft_error("Stack is already sorted!");
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
 	}
-	index_stack(stack_a);
-	if (argc <= 6)
-		simple_sort(stack_a, stack_b);
-	else if (argc == 101)
-		cent_sort(stack_a, stack_b);
-	else
-		radix_sort(stack_a, stack_b);
-	if (is_sorted(stack_a))
-		ft_putendl_fd("sorted yay", 1);
+	sort_stack(stack_a, stack_b, argc);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
