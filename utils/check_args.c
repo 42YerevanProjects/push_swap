@@ -30,8 +30,8 @@ static int	ft_isnum(char *num)
 
 void	ft_check_args(char **argv)
 {
-	int	i;
-	int	tmp;
+	int		i;
+	long	tmp;
 
 	i = 1;
 	 while (argv[i])
@@ -41,7 +41,8 @@ void	ft_check_args(char **argv)
 			ft_error("Error");
 		if (ft_contains(tmp, argv, i))
 			ft_error("Error");
-		// TODO: handle MAX_INT and MIN_INT
+		if (tmp < -2147483648 || tmp > 2147483647)
+			ft_error("Error");
 		i++;
 	}
 }
