@@ -18,6 +18,9 @@
 # include <stdio.h>
 # include <fcntl.h>
 
+# define BUFF_SIZE	(1)
+# define MAX_FD (1025)
+
 void				*ft_bzero(void *s, size_t len);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *str, int fd);
@@ -39,9 +42,11 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *str1,
 						const char *str2, size_t lestrlen);
-long					ft_atoi(const char *str);
+long				ft_atoi(const char *str);
+int					get_next_line(const int fd, char **line);
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
