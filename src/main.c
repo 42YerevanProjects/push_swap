@@ -12,11 +12,11 @@ static void	initStack(t_list **stack, char **argv)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
+	index_stack(stack);
 }
 
 static void	sort_stack(t_list **stack_a, t_list **stack_b, int argc)
 {
-	index_stack(stack_a);
 	if (argc <= 6)
 		simple_sort(stack_a, stack_b);
 	else if (argc < 50)
@@ -49,6 +49,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	sort_stack(stack_a, stack_b, argc);
+	if (is_sorted(stack_a))
+	ft_putendl_fd("yay", 1);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

@@ -2,11 +2,12 @@
 
 // Swaps first two elements of a stack | sa and sb
 
-static int	swap(t_list **stack)
+int	swap(t_list **stack)
 {
 	t_list	*head;
 	t_list	*next;
 	int		tmp_val;
+	//int		tmp_index;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
@@ -15,8 +16,11 @@ static int	swap(t_list **stack)
 	if (!head && !next)
 		ft_error("Error occured while swapping!");
 	tmp_val = head->value;
+	//tmp_index = head->index;
 	head->value = next->value;
+	//head->index = next->index;
 	next->value = tmp_val;
+	//next->index = tmp_index;
 	return (0);
 }
 
@@ -48,7 +52,7 @@ int	ss(t_list **stack_a, t_list **stack_b)
 
 // Takes the first element of one stack and puts it at the top of another | pa and pb
 
-static int	push(t_list **stack_to, t_list **stack_from)
+int	push(t_list **stack_to, t_list **stack_from)
 {
 	t_list	*tmp;
 	t_list	*head_to;
@@ -93,7 +97,7 @@ int	pb(t_list **stack_a, t_list **stack_b)
 
 // Shift up all elements of a stack by 1. The first element becomes the last one | ra and rb
 
-static int	rotate(t_list **stack)
+int	rotate(t_list **stack)
 {
 	t_list	*head;
 	t_list	*tail;
@@ -137,7 +141,7 @@ int	rr(t_list **stack_a, t_list **stack_b)
 
 // Shifts down all elements of a stack by 1. The last element becomes the first one | rra and rrb
 
-static int	reverseRotate(t_list **stack)
+int	reverseRotate(t_list **stack)
 {
 	t_list	*head;
 	t_list	*tail;

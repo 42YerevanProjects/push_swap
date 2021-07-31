@@ -17,6 +17,8 @@ void	sort_3(t_list **stack_a)
 	t_list	*head;
 
 	head = *stack_a;
+	if (is_sorted(stack_a))
+		return ;
 	if (head->index == 0 && head->next->index != 1)
 	{
 		ra(stack_a);
@@ -43,6 +45,8 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
 
+	if (is_sorted(stack_a))
+		return ;
 	distance = get_distance(stack_a, 0);
 	if (distance == 1)
 		ra(stack_a);
