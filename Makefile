@@ -1,7 +1,7 @@
 NAME = push_swap
-CHECK = checker
+CHECK = checker_MY
 
-SRCS = src/main.c src/instructions.c src/radix.c src/simple.c src/centum.c src/sort.c \
+SRCS = src/main.c src/instructions.c src/radix.c src/simple.c \
 	   utils/t_list.c utils/utils.c utils/check_args.c utils/index.c 
 CHECK_SRCS = src/instructions.c utils/t_list.c utils/utils.c checker.c
 
