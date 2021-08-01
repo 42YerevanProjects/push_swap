@@ -28,21 +28,31 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
-void	ft_check_args(char **argv)
+void	ft_check_args(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
+	char	**args;	
 
-	i = 1;
-	 while (argv[i])
+	i = 0;
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
 	{
-		tmp = ft_atoi(argv[i]);
-		if (!ft_isnum(argv[i]))
+		i = 1;
+		args = argv;
+	}
+	while (args[i])
+	{
+		tmp = ft_atoi(args[i]);
+		if (!ft_isnum(args[i]))
 			ft_error("Error");
-		if (ft_contains(tmp, argv, i))
+		if (ft_contains(tmp, args, i))
 			ft_error("Error");
 		if (tmp < -2147483648 || tmp > 2147483647)
 			ft_error("Error");
 		i++;
 	}
+
+	// free args
 }
