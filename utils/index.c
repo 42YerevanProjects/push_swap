@@ -37,3 +37,4 @@ void	index_stack(t_list **stack)
 		head = get_next_min(stack);
 	}
 }
+
