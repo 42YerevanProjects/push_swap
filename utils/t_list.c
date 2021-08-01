@@ -1,5 +1,5 @@
 #include "../includes/push_swap.h"
-#include <stdio.h>
+
 // Adappted version of Libft functions that deal with Linked Lists
 
 // Creates new node and returns the pointer of it
@@ -17,7 +17,6 @@ t_list	*ft_lstnew(int value)
 }
 
 // Adds the specified node to a stack (list) making it the head
-
 void	ft_lstadd_front(t_list **stack, t_list *new)
 {
 	new->next = *stack;
@@ -25,7 +24,6 @@ void	ft_lstadd_front(t_list **stack, t_list *new)
 }
 
 // Returns the last node of a list 
-
 t_list	*ft_lstlast(t_list *head)
 {
 	t_list	*tmp;
@@ -41,7 +39,6 @@ t_list	*ft_lstlast(t_list *head)
 }
 
 // Adds the specified node to a stack (list) making it the last node
-
 void	ft_lstadd_back(t_list **stack, t_list *new)
 {
 	t_list	*n;
@@ -60,7 +57,6 @@ void	ft_lstadd_back(t_list **stack, t_list *new)
 }
 
 // Returns the size of the Linked List
-
 int	ft_lstsize(t_list *head)
 {
 	size_t	i;
@@ -77,7 +73,6 @@ int	ft_lstsize(t_list *head)
 }
 
 // Prints the Linked List
-
 void	printList(t_list *head)
 {
 	t_list	*tmp;
@@ -90,3 +85,4 @@ void	printList(t_list *head)
 		tmp = tmp->next;
 	}
 }
+
