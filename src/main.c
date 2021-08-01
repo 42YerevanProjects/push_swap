@@ -33,7 +33,6 @@ static void	sort_stack(t_list **stack_a, t_list **stack_b, int argc)
 }
 
 // The main function
-
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
