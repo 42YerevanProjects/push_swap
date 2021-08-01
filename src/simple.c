@@ -57,6 +57,8 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 	}
 	else if (distance == 3)
 		rra(stack_a);
+	if (is_sorted(stack_a))
+		return ;
 	pb(stack_a, stack_b);
 	decrement_index(stack_a);
 	sort_3(stack_a);
@@ -82,6 +84,8 @@ static void	sort_5(t_list **stack_a, t_list **stack_b)
 	}
 	else if (distance == 4)
 		rra(stack_a);
+	if (is_sorted(stack_a))
+		return ;
 	pb(stack_a, stack_b);
 	decrement_index(stack_a);
 	sort_4(stack_a, stack_b);
