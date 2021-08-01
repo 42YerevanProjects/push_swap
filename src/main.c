@@ -54,8 +54,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	sort_stack(stack_a, stack_b, argc);
-	//if (is_sorted(stack_a))
-	//	ft_putendl_fd("yay", 1);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
