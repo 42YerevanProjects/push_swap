@@ -11,7 +11,7 @@ static int	get_max_bits(t_list **stack)
 	max_bits = 0;
 	while (head)
 	{
-		if (head->value > max)
+		if (head->index > max)
 			max = head->index;
 		head = head->next;
 	}
