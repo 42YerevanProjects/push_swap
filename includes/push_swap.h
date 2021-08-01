@@ -4,7 +4,6 @@
 # include "../libft/libft.h"
 
 // Stack
-
 typedef struct s_list
 {
 	int				value;
@@ -22,7 +21,7 @@ void	printList(t_list *head);
 int		ft_lstsize(t_list *head);
 
 void	ft_error(char *msg);
-void	ft_check_args(char **argv);
+void	ft_check_args(int argc, char **argv);
 int		is_sorted(t_list **stack);
 int		get_distance(t_list **stack, int index);
 void	make_top(t_list **stack, int distance);
@@ -30,11 +29,9 @@ void	free_stack(t_list **stack);
 
 // Algorithm utils
 
-void	index_stack(t_list **stack);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
-void	cent_sort(t_list **stack_a, t_list **stack_b);
-void	sort(t_list **stack_a, t_list **stack_b);
+void	index_stack(t_list **stack);
 
 // Instruction functions
 
