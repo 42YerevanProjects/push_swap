@@ -28,6 +28,8 @@ static void	sort_stack(t_list **stack_a, t_list **stack_b, int argc)
 {
 	if (argc <= 6)
 		simple_sort(stack_a, stack_b);
+	else if (argc == 101)
+		sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
 }
