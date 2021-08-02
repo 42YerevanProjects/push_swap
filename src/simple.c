@@ -1,18 +1,5 @@
 #include "../includes/push_swap.h"
 
-/*
-static void	decrement_index(t_list **stack)
-{
-	t_list	*head;
-
-	head = *stack;
-	while (head)
-	{
-		head->index--;
-		head = head->next;
-	}
-} */
-
 static int	get_min(t_list **stack, int val)
 {
 	t_list	*head;
@@ -29,7 +16,7 @@ static int	get_min(t_list **stack, int val)
 	return (min);
 }
 
-void	sort_3(t_list **stack_a)
+static void	sort_3(t_list **stack_a)
 {
 	t_list	*head;
 	int		min;
@@ -88,11 +75,11 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 	pa(stack_a, stack_b);
 }
 
-static void	sort_5(t_list **stack_a, t_list **stack_b)
+void	sort_5(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
 
-	distance = get_distance(stack_a, 0);
+	distance = get_distance(stack_a, get_min(stack_a, -1));
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
@@ -118,6 +105,8 @@ void	simple_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
+	if (is_sorted(stack_a))
+		return ;
 	size = ft_lstsize(*stack_a);
 	if (size == 2)
 		sa(stack_a);
