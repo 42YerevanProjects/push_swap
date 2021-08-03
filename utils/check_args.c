@@ -53,6 +53,6 @@ void	ft_check_args(int argc, char **argv)
 			ft_error("Error");
 		i++;
 	}
-
-	// free args
+	if (argc == 2)
+		ft_free(args);
 }

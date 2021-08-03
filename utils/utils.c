@@ -6,6 +6,17 @@ void	ft_error(char *msg)
 	exit(0);
 }
 
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
+		free(str[i--]);
+}
+
 int	is_sorted(t_list **stack)
 {
 	t_list	*head;

@@ -26,6 +26,7 @@ int		is_sorted(t_list **stack);
 int		get_distance(t_list **stack, int index);
 void	make_top(t_list **stack, int distance);
 void	free_stack(t_list **stack);
+void	ft_free(char **str);
 
 // Algorithm utils
 

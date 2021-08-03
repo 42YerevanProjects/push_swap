@@ -105,7 +105,8 @@ void	simple_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	if (is_sorted(stack_a))
+	if (is_sorted(stack_a) || ft_lstsize(*stack_a) == 0
+		|| ft_lstsize(*stack_a) == 1)
 		return ;
 	size = ft_lstsize(*stack_a);
 	if (size == 2)

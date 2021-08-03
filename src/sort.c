@@ -14,7 +14,7 @@ void	sort(t_list **stack_a, t_list **stack_b)
 	i = 5;
 	while (i > 0)
 	{
-		while (ft_lstsize(*stack_a) != 0)
+		while (ft_lstsize(*stack_a) != size % 5)
 		{
 			if (head->index < chunk)
 			{
@@ -28,11 +28,11 @@ void	sort(t_list **stack_a, t_list **stack_b)
 			else
 				break ;
 		}
-		chunk = 2 * chunk;
+		chunk = chunk + chunk;
 		i--;
 	}
 	simple_sort(stack_a, stack_b);
-	i = size - 1;
+	i = size - (size % 5) - 1;
 	while (i >= 0)
 	{
 		head = *stack_b;

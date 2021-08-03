@@ -21,14 +21,17 @@ static void	initStack(t_list **stack, int argc, char **argv)
 		i++;
 	}
 	index_stack(stack);
-	// free args
+	if (argc == 2)
+		ft_free(args);
 }
 
-static void	sort_stack(t_list **stack_a, t_list **stack_b, int argc)
+static void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
-	if (argc <= 6)
+	if (ft_lstsize(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
-	else if (argc == 101)
+	else if (ft_lstsize(*stack_a) <= 25)
+		radix_sort(stack_a, stack_b);
+	else if (ft_lstsize(*stack_a) <= 100)
 		sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
@@ -39,7 +42,7 @@ int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
-	
+
 	if (argc < 2)
 		return (-1);
 	ft_check_args(argc, argv);
@@ -54,7 +57,7 @@ int	main(int argc, char **argv)
 		free_stack(stack_b);
 		return (0);
 	}
-	sort_stack(stack_a, stack_b, argc);
+	sort_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

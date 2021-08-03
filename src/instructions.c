@@ -7,7 +7,7 @@ int	swap(t_list **stack)
 	t_list	*head;
 	t_list	*next;
 	int		tmp_val;
-	//int		tmp_index;
+	int		tmp_index;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
@@ -16,11 +16,11 @@ int	swap(t_list **stack)
 	if (!head && !next)
 		ft_error("Error occured while swapping!");
 	tmp_val = head->value;
-	//tmp_index = head->index;
+	tmp_index = head->index;
 	head->value = next->value;
-	//head->index = next->index;
+	head->index = next->index;
 	next->value = tmp_val;
-	//next->index = tmp_index;
+	next->index = tmp_index;
 	return (0);
 }
 
