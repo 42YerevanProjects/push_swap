@@ -1,9 +1,9 @@
 NAME = push_swap
-CHECK = checker_MY
+CHECK = checker
 
 SRCS = src/main.c src/instructions.c src/radix.c src/simple.c src/sort.c \
 	   utils/t_list.c utils/utils.c utils/check_args.c utils/index.c 
-CHECK_SRCS = src/instructions.c utils/t_list.c utils/utils.c checker.c
+CHECK_SRCS = src/instructions.c utils/t_list.c utils/utils.c utils/check_args.c utils/index.c checker.c
 
 OBJS = ${SRCS:.c=.o}
 CHECK_OBJS = ${CHECK_SRCS:.c=.o}
