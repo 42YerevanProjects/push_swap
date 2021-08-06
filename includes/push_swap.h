@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
+/*   Updated: 2021/07/09 18:33:23 by shovsepy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -12,7 +24,6 @@ typedef struct s_list
 }				t_list;
 
 // Util functions
-
 t_list	*ft_lstnew(int value);
 t_list	*ft_lstlast(t_list *head);
 void	ft_lstadd_front(t_list **stack, t_list *new);
@@ -29,15 +40,12 @@ void	free_stack(t_list **stack);
 void	ft_free(char **str);
 
 // Algorithm utils
-
 void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
 void	index_stack(t_list **stack);
 void	sort_5(t_list **stack_a, t_list **stack_b);
-void	sort(t_list **stack_a, t_list **stack_b);
 
 // Instruction functions
-
 int		swap(t_list **stack);
 int		push(t_list **stack_to, t_list **stack_from);
 int		rotate(t_list **stack);
@@ -56,3 +64,4 @@ int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
 
 #endif
+
