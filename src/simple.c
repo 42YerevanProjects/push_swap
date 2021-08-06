@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
+/*   Updated: 2021/07/09 18:33:23 by shovsepy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 static int	get_min(t_list **stack, int val)
@@ -118,3 +130,4 @@ void	simple_sort(t_list **stack_a, t_list **stack_b)
 	else if (size == 5)
 		sort_5(stack_a, stack_b);
 }
+
