@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/03 18:33:22 by shovsepy          #+#    #+#             */
+/*   Updated: 2021/08/03 18:33:23 by shovsepy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./includes/push_swap.h"
 
 int	do_commands(char *line, t_list **stack_a, t_list **stack_b)
@@ -126,3 +138,4 @@ int	main(int argc, char **argv)
 	print_checker_res(stack_a, stack_b);
 	return (0);
 }
+
