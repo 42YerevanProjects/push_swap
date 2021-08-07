@@ -63,10 +63,10 @@ After that, we connect every number according to the order of boxes.
 
 As we can see, the numbers are sorted according to the digit in 1’s place. For those with the same digit in 1’s place, they’re sorted according to their order in the original list.
 
-We repeat this procedure n times, whiere n is the number of digitsof the largest number in the array
+We repeat this procedure n times, whiere n is the number of digits of the largest number in the array
 (In this case 783 => n = 3).
 
-After doing it n times and connection numbers after each cycle we will have array sorted.
+After doing it n times and connecting numbers after each cycle we will have array sorted.
 
 ### Simplify numbers
 
@@ -95,7 +95,7 @@ My push_swap sorts
     100 numbers with maximum 1084 instructions => 3 points,
     500 numbers with maximum 6785 instructions => 4 points.
 
-The algorith is good enought to pass the project. If the Bonus part is also done the proect could get more than 105%.
+The algorith is good enought to pass the project. If the Bonus part is also done the project could get more than 105%.
 
 ## Bonus
 
