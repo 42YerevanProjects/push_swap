@@ -25,7 +25,7 @@ it that can't be executed won't.
 | `rrb` | reverse rotate b                    | shifts all elements of stack b from top to bottom      |
 | `rrr` | reverse rotate a + reverse rotate b | both `rra` and `rrb`                                   |
 
-## Alogorithm
+## Algorithm
 
 For the stacks with size less than 6 I wrote a simple sort which can be found in the src folder.
 
