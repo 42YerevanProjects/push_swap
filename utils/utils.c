@@ -93,4 +93,5 @@ void	free_stack(t_list **stack)
 		head = head->next;
 		free(tmp);
 	}
+	free(stack);
 }
