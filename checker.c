@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "push_swap.h"
 
 int	do_commands(char *line, t_list **stack_a, t_list **stack_b)
 {
