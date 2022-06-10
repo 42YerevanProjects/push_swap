@@ -97,7 +97,7 @@ My push_swap sorts
 
 The algorith is good enought to pass the project. If the Bonus part is also done the project could get more than 105%.
 
-## Bonus
+### Bonus
 
 The bonus part is to write a program named checker, which will get as an argument the stack A formatted as a list of integers. Checker will then wait and read instructions on the standard input. Once all the instructions have been read, checker will execute them on the stack received as an argument (After giving the instructions press ctrl + d).
 
@@ -105,29 +105,3 @@ If after executing those instructions, stack a is actually sorted and b is empty
 checker must display "OK" else "KO". If checker arguments are invalid it displays Error.
 
 The checker code can be found in the checker.c file in this repository.
-
-## Tester
-
-There is also a tester attached to this project. The tester checks the validity of arguments and the algorithm itself on different numbers and different stack sizes. It also displays the Avarage instruction quantity for 100 and 500 numbers.
-
-To run the tester you need to make the code and then run the following command
-
-```
-./test.sh
-```
-
-## Compiling and running
-
-Run `make`. after which the project will be compiled. Then run the command
-
-```
-./push_swap $ARG
-```
-
-where ARG is just a sample of numbers. To run the checker you need to write this command
-
-```
-./checker $ARG $INSTRUCTIONS
-```
-
-where ARG is just a sample of numbers and the INSTRUCTIONS are the instruction given on a new line each.
