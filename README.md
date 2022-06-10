@@ -6,6 +6,8 @@ Given a set of integers, sort it using a predefined set of instructions using
 two stacks. The instruction set is defined below. This program outputs a program
 in push_swap instructions that sorts the input integers.
 
+> ⚠️ **Warning**: Don't copy/paste anything you don't understand: it's bad for you, and for the school.
+
 ## Instruction set
 
 For the following instructions, if the instruction is not possible, the part of
