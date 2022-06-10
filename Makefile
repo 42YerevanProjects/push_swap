@@ -13,15 +13,14 @@
 NAME = push_swap
 CHECK = checker
 
-SRCS = src/main.c src/instructions.c src/radix.c src/simple.c \
-	   utils/t_list.c utils/utils.c utils/check_args.c utils/index.c 
-CHECK_SRCS = src/instructions.c utils/t_list.c utils/utils.c utils/check_args.c utils/index.c checker.c
+SRCS =  $(wildcard src/*.c utils/*.c)
+CHECK_SRCS = $(wildcard utils/*.c) src/instructions.c checker.c
 
 OBJS = ${SRCS:.c=.o}
 CHECK_OBJS = ${CHECK_SRCS:.c=.o}
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 RM = rm -rf
 
