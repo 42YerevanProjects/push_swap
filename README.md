@@ -1,4 +1,4 @@
-# 42-push_swap
+# 42 Push_Swap
 
 Because swap_push isn't as natural
 
