@@ -107,3 +107,16 @@ If after executing those instructions, stack a is actually sorted and b is empty
 checker must display "OK" else "KO". If checker arguments are invalid it displays Error.
 
 The checker code can be found in the checker.c file in this repository.
+
+## Resources 
+
+You can find some links and books below that might be useful during the project. You can find all the books in resources folder. 
+Note that you do not have to read the books completly but you will find a lot of useful information there.
+
+Books
+
+- [Algorithms](https://github.com/42YerevanProjects/42_Push_Swap/tree/master/resources)
+
+Links
+
+- [Push Swap Tutorial](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
