@@ -72,20 +72,23 @@ After doing it n times and connecting numbers after each cycle we will have arra
 
 ### Simplify numbers
 
-As we mentioned before, this algorithm is for non-negative integers. However, we’ll have negative numbers in this project, so we should simplify the numbers before we start.
+Instead of dealing with potentially large or negative integers, we assign each number an index based on its relative size. This process is often called "coordinate compression" or "discretization".
 
-To do so I gave indexes to each number in a stack. The smalles number gets index 0, the next smallest gets 1 and so on...
-With this idea, we can simplify any list of integers to make them in the range [0,N) ( ≥ 0 and < N, N is the size of the list).
+   For example, if we have [-5, 100, 2, -10], we'd simplify it to [1, 3, 2, 0].
 
-After simplification we need to do something with the boxes. We have only two stacks instead of 10 boxes. Hence, I sorted the number in base 2 (to use 2 stacks instead of 10).
+2. Base-2 representation:
+   After simplification, we represent each number in binary (base-2). This allows us to sort using only two stacks, which we'll call A and B.
 
-As in radix sort, we need two boxes for 0 and 1 respectively. Here we treat A as box 1 and B as box 0. Then, we start from the rightmost bit to the leftmost bit.
+3. Radix sort adaptation:
+   We perform a radix sort, but instead of using 10 buckets (for base-10), we use 2 stacks (for base-2).
 
-At the i-th digit from the right, if the i-th digit of the top number of A is 0, we perform `pb` to put this number in stack B. Else, we perform `ra` to leave it in stack A. After we perform one operation on each number, each of them is in the box that corresponds to its digit, as how we put numbers in the boxes in radix sort.
-
-After that, we perform `pa` until there are no numbers in stack B, as we connect the numbers in radix sort.
-
-Repeated the same procedure for every bit and after that got the sorted numbers in the stack a.
+4. Sorting process:
+   - We start from the least significant bit (rightmost) and move towards the most significant bit (leftmost).
+   - For each bit position:
+     - If the bit is 0, we move the number to stack B (pb - push to B).
+     - If the bit is 1, we rotate stack A (ra - rotate A), keeping the number in A.
+   - After processing all numbers for a bit, we move all numbers from B back to A (pa - push to A).
+   - We repeat this process for each bit.
 
 ### Performance of the Algorithm
 
